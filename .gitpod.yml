@@ -6,7 +6,7 @@ tasks:
       cd /workspace &&
       wget -O karaf.tar.gz http://apache.lauf-forum.at/karaf/4.2.7/apache-karaf-4.2.7.tar.gz &&
       tar -zvxf karaf.tar.gz &&
-      cd qbilon-process-agent &&
+      cd karaf-resolver-error-example &&
       mvn install &&
       rm ../apache-karaf-4.2.7/etc/org.apache.karaf.features.cfg && 
       rm ../apache-karaf-4.2.7/etc/org.ops4j.pax.url.mvn.cfg && 
