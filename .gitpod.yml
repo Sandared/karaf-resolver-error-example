@@ -1,0 +1,40 @@
+image:
+  file: .gitpod.Dockerfile
+tasks:    
+    # Download Karaf, unzip it, Path is already set in Dockerfile
+  - init: > 
+      cd /workspace &&
+      wget -O karaf.tar.gz http://apache.lauf-forum.at/karaf/4.2.7/apache-karaf-4.2.7.tar.gz &&
+      tar -zvxf karaf.tar.gz &&
+      cd qbilon-process-agent &&
+      mvn install &&
+      rm ../apache-karaf-4.2.7/etc/org.apache.karaf.features.cfg && 
+      rm ../apache-karaf-4.2.7/etc/org.ops4j.pax.url.mvn.cfg && 
+      ln -s $PWD/processagent-feature/target/classes/org.apache.karaf.features.cfg ../apache-karaf-4.2.7/etc/org.apache.karaf.features.cfg && 
+      ln -s $PWD/processagent-feature/target/classes/org.ops4j.pax.url.mvn.cfg ../apache-karaf-4.2.7/etc/org.ops4j.pax.url.mvn.cfg
+    # Start Karaf 
+    command: karaf
+    name: Process Agent
+
+ports:
+     # default port Spring Pet Clinic
+   - port: 8080
+     onOpen: open-preview
+     # default http port Karaf
+   - port: 8101
+     onOpen: ignore
+     # default RMI port Karaf
+   - port: 1099
+     onOpen: ignore
+     # default debugging port for karaf
+   - port: 5005
+     onOpen: ignore
+
+vscode:
+  extensions:
+    - GabrielBB.vscode-lombok@0.9.9:crmJ0s9mO0sdhxHl4cZaMw==
+    - vscjava.vscode-maven@0.20.2:JNcGS5UaMCMRjbkKt40gUQ==
+    - vscjava.vscode-java-debug@0.23.0:3ARqL3kPh1J1SwpVjYUjqw==
+    - redhat.java@0.54.2:Q60n5quUtfd1EcwzkRq96A==
+    - vscjava.vscode-java-test@0.22.0:BlvjRRJyZszeJzIS+xEHIA==
+
