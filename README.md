@@ -1,0 +1,1 @@
+# karaf-resolver-error-example
