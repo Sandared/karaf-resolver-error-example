@@ -11,7 +11,7 @@
     <artifactId>processagent-impl</artifactId>
     <packaging>bundle</packaging>
 
-    <description>The main bundle for the qbilon process agent</description>
+    <description>The main bundle for the test</description>
 
     <dependencies>
         <!-- OSGi Event Admin -->
@@ -62,17 +62,6 @@
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.converter</artifactId>
         </dependency>
     </dependencies>
 
