@@ -7,7 +7,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <description>The process-agent application - built using OSGi enRoute R7</description>
+    <description>Test using OSGi enRoute R7</description>
 
     <modules>
         <module>processagent-impl</module>
@@ -19,7 +19,6 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <bnd.version>4.3.0</bnd.version>
-        <bytebuddy.version>1.10.6</bytebuddy.version>
         <msgpack.version>0.8.20</msgpack.version>
         <jackson.version>2.10.1</jackson.version>
         <osgi.version>6.0.0</osgi.version>
@@ -30,8 +29,6 @@
         <lombok.version>1.18.10</lombok.version>
         <cxf.version>3.3.4</cxf.version>
         <servicemix-spec.version>2.9.0</servicemix-spec.version>
-        <gson.version>2.8.5</gson.version>
-        <felix.converter.version>1.0.12</felix.converter.version>
     </properties>
 
 
@@ -96,13 +93,6 @@
                 <scope>compile</scope>
             </dependency>
 
-            <!-- Easens attaching of agents -->
-            <dependency>
-                <groupId>net.bytebuddy</groupId>
-                <artifactId>byte-buddy-agent</artifactId>
-                <version>${bytebuddy.version}</version>
-            </dependency>
-
             <!-- Messagepack needed for receiving traces from the dd-agent -->
             <dependency>
                 <groupId>org.msgpack</groupId>
@@ -127,22 +117,6 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
-
-            <!-- Gson for Json parsing/generation -->
-            <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>${gson.version}</version>
-            </dependency>
-
-            <!-- OSGi converter implementation -->
-            <dependency>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>org.apache.felix.converter</artifactId>
-                <version>${felix.converter.version}</version>
-            </dependency>
-
-
         </dependencies>
     </dependencyManagement>
 
